@@ -1,0 +1,282 @@
+.cost-slide {
+  position: relative;
+  overflow: hidden;
+  background-color: $white;
+
+  .left-gradient {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    bottom: 0;
+    left: 0;
+    margin-right: 191px;
+    background: linear-gradient(to right, #e3f5dd 0%, #85d6d5 90%, #85d6d5 100%);
+
+    .triangle {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+
+      &:before {
+        display: block;
+        width: 0;
+        height: 0;
+        content: "";
+        border-right: 240px solid transparent;
+        border-bottom: 2145px solid #85d6d5;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 50vw;
+      margin-left: -40px;
+      width: 50vw;
+      height: 95.9%;
+      max-width: 740px;
+      content: '';
+      background-image: url(../assets/cost.png);
+      background-position: bottom center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translateX(-60%);
+    }
+  }
+
+  .gradient-title {
+    position: absolute;
+    bottom: 10%;
+    left: 30px;
+    font-family: $headingFontFamilyBold;
+    font-size: 92px;
+    line-height: 95px;
+    letter-spacing: 0.065em;
+    text-align: left;
+    text-transform: uppercase;
+    color: $white;
+  }
+
+  .slide-content-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 130px 0 40px;
+    padding-left: 50%;
+  }
+
+  .text {
+    margin-right: -30px;
+    max-width: 530px;
+    text-align: left;
+
+    &:after {
+      clear: both;
+      display: table;
+      content: '';
+    }
+  }
+}
+
+.cost-slide .text {
+  color: #5fa7a8;
+
+  .buy-form {
+    border-color: rgba(#5fa7a8, 0.5);
+
+    input {
+      color: #5fa7a8;
+    }
+
+    .subscribe-block:before {
+      background-color: rgba(#5fa7a8, 0.5);
+    }
+  }
+
+  h2 {
+    margin: 0 0 15px;
+    font-family: $baseFontFamily;
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  ul {
+    margin: 0 0 16px;
+    padding-left: 25px;
+    list-style-type: decimal;
+    font-family: $headingFontFamilyLight;
+    font-size: 30px;
+    line-height: 1.1875;
+  }
+
+  .buy-form {
+    float: right;
+    width: 640px;
+  }
+}
+
+@include mediaMd {
+  .cost-slide {
+    .left-gradient:after {
+      top: 90px;
+      left: 0;
+      margin-left: 80px;
+      width: 50vw;
+      transform: none;
+    }
+
+    .gradient-title {
+      font-size: 44px;
+    }
+
+    .slide-content-flex {
+      justify-content: flex-end;
+    }
+
+    .text {
+      max-width: 420px;
+
+      .buy-form {
+        width: 550px;
+      }
+    }
+  }
+}
+
+@include mediaMdMax {
+  .cost-slide {
+    .gradient-title {
+      line-height: 1.1;
+    }
+
+    .text {
+      margin-right: 0;
+
+      ul {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@include mediaSm {
+  .cost-slide {
+    .left-gradient {
+      margin-right: 110px;
+
+      &:after {
+        top: 270px;
+        bottom: 0;
+        left: 10px;
+        width: 154%;
+        height: auto;
+        max-height: none;
+        background-position: bottom center;
+        transform: none;
+      }
+    }
+
+    .gradient-title {
+      top: 150px;
+      bottom: auto;
+      left: 15px;
+      font-size: 50px;
+    }
+
+    .text {
+      max-width: 100%;
+
+      .buy-form {
+        width: 420px;
+      }
+    }
+  }
+}
+
+@include mediaTsMax {
+  .cost-slide {
+    .slide-content-flex {
+      padding: 350px 0 30px;
+    }
+
+    .left-gradient {
+      right: 0;
+      bottom: auto;
+      left: 0;
+      margin: 0;
+      width: auto;
+      height: 325px;
+
+      .triangle {
+        display: none;
+      }
+
+      &:after {
+        top: 120px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        min-width: 0;
+        max-width: none;
+        transform: none;
+      }
+    }
+
+    .gradient-title {
+      top: 90px;
+      right: 0;
+      bottom: auto;
+      left: 0;
+      font-size: 36px;
+      line-height: 1;
+      text-align: center;
+      transform: none;
+
+      br {
+        display: none;
+      }
+    }
+
+    .text {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 420px;
+
+      .buy-form {
+        float: none;
+        width: auto;
+        max-width: 100%;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@include mediaXs {
+  .cost-slide {
+    .gradient-title {
+      font-size: 32px;
+    }
+
+    .text {
+      ul {
+        font-size: 19px;
+
+        li {
+          margin: 0 0 5px;
+        }
+      }
+    }
+  }
+}

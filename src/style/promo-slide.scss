@@ -1,0 +1,494 @@
+.promo-slide {
+  position: relative;
+  overflow: hidden;
+  color: $white;
+  background: $redGradient;
+
+  .scroll-hint {
+    position: absolute;
+    top: 100vh;
+    left: 50%;
+    margin-top: -90px;
+    margin-left: -17px;
+    content: '';
+    opacity: 0;
+
+    &:after {
+      display: block;
+      width: 34px;
+      height: 34px;
+      content: '';
+      border-width: 0 2px 2px 0;
+      border-style: solid;
+      border-color: $white;
+      transform: rotate(45deg);
+      animation: bound 0.9s infinite linear;
+      pointer-events: none;
+    }
+  }
+
+  .flag-girl {
+    position: absolute;
+    bottom: 0;
+    transition: transform 1.2s cubic-bezier(0, 0, 0.2, 1);
+
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      background-image: url(../assets/flag.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  & > .container {
+    min-height: 100%;
+  }
+
+  .slide-content-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding-bottom: 15px;
+  }
+
+  .text {
+    position: relative;
+    z-index: 1;
+    margin: 0 -6px;
+  }
+}
+
+.promo-slide .text {
+  h1 {
+    position: relative;
+    margin: 0 0 23px;
+    font-family: $baseFontFamily;
+    font-size: 38px;
+    line-height: 1.21;
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
+    text-shadow: -5px 7px 0 rgba(156, 20, 27, 0.25);
+    color: $white;
+
+    span {
+      color: $yellow;
+
+      &.big {
+        font-size: 110%;
+      }
+
+      &.bigger {
+        font-size: 131%;
+      }
+    }
+  }
+
+  ul {
+    margin: 0 0 13px;
+    padding: 0 0 0 25px;
+    list-style-type: disc;
+    font-family: $baseFontFamily;
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+
+    li {
+      margin: 0;
+      line-height: 1.2;
+    }
+  }
+
+  .buy-form {
+    border-color: rgba($white, 0.5);
+
+    input {
+      color: $white;
+    }
+
+    .subscribe-block:before {
+      background-color: rgba($white, 0.5);
+    }
+  }
+}
+
+.promo-slide .share-container {
+  position: absolute;
+  right: 30px;
+  bottom: 45px;
+  z-index: 10;
+  width: 100px;
+  background-color: $red;
+  border-radius: 2px;
+
+  &:after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin: -1px 0 0 -7px;
+    width: 0;
+    height: 0;
+    content: '';
+    border-width: 10px 7px 0 7px;
+    border-style: solid;
+    border-color: $red transparent transparent transparent;
+  }
+
+  &:hover .share-menu-container,
+  .toggle-share-btn.open-menu + .share-menu-container {
+    height: 320px;
+  }
+
+  &:hover .share-menu-container .ya-share2__link {
+    animation-name: disablePointer;
+    animation-duration: 1s;
+  }
+
+  .toggle-share-btn {
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    font-family: $headingFontFamilyBold;
+    font-size: 16px;
+    line-height: 1.125;
+    text-transform: uppercase;
+    color: $yellow;
+  }
+
+  .share-menu-container {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+
+    .ya-share2__list {
+      width: 100%;
+      padding: 21px 0 25px;
+    }
+
+    .ya-share2__item {
+      display: block;
+      text-align: center;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      & + .ya-share2__item {
+        margin-top: 30px;
+      }
+    }
+
+    .ya-share2__badge {
+      width: 46px;
+      height: 46px;
+      background-color: $white;
+      border-radius: 50%;
+    }
+
+    .ya-share2__icon {
+      margin: 4px;
+      width: 38px;
+      height: 38px;
+      background-size: contain;
+      filter: sepia() saturate(100000%) hue-rotate(115deg) brightness(70%) invert(100%);
+    }
+
+    .ya-share2__item_service_vkontakte .ya-share2__icon {
+      background-position: 0 2px;
+    }
+
+    .ya-share2__item_service_facebook .ya-share2__icon {
+      background-position: 0 1px;
+    }
+
+    .ya-share2__item_service_twitter .ya-share2__icon {
+      background-position: 1px 0;
+    }
+
+    .ya-share2__item_service_odnoklassniki .ya-share2__icon {
+      background-position: 1px 0;
+    }
+  }
+}
+
+@include landscape {
+  .promo-slide {
+    .flag-girl {
+      left: 52%;
+      width: 74%;
+      height: 120%;
+
+      &:before {
+        background-position: bottom left;
+        transform: translateX(-12.5%);
+      }
+    }
+
+    .slide-content-flex {
+      min-height: 100%;
+      padding-top: 120px;
+    }
+
+    .text {
+      h1 {
+        max-width: 520px;
+      }
+    }
+  }
+}
+
+@include portrait {
+  .promo-slide {
+    .flag-girl {
+      right: 30px;
+      left: 30px;
+      height: 50%;
+
+      &:before {
+        background-position: bottom center;
+      }
+    }
+
+    .slide-content-flex {
+      margin-bottom: 80%;
+      min-height: 50%;
+      padding-top: 140px;
+    }
+
+    .text {
+      margin: 0 auto;
+      text-align: center;
+
+      ul {
+        margin-bottom: 20px;
+        display: inline-block;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@include mediaLg {
+  .promo-slide {
+    .text {
+      max-width: 700px;
+    }
+  }
+}
+
+@include mediaMd {
+  .promo-slide {
+    .text {
+      max-width: 540px;
+
+      h1 {
+        margin: 0 0 20px;
+        font-size: 32px;
+      }
+
+      ul {
+        max-width: 500px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@include landscape {
+  @include mediaMd {
+    .promo-slide {
+      .flag-girl {
+        left: 53%;
+        width: 73%;
+      }
+    }
+  }
+}
+
+@include portrait {
+  @include mediaMd {
+    .promo-slide {
+      .text {
+        max-width: 600px;
+      }
+    }
+  }
+}
+
+@include mediaSmMax {
+  .promo-slide {
+    .text h1 span {
+      &.big {
+        font-size: 105%;
+      }
+
+      &.bigger {
+        font-size: 115%;
+      }
+    }
+  }
+}
+
+@include mediaSm {
+  .promo-slide {
+    .text {
+      h1 {
+        margin: 0 0 10px;
+        font-size: 28px;
+      }
+
+      ul {
+        max-width: 370px;
+        font-size: 18px;
+
+        li {
+          margin: 0 0 4px;
+        }
+      }
+    }
+  }
+}
+
+@include landscape {
+  @include mediaSm {
+    .promo-slide {
+      .flag-girl {
+        top: 110px;
+        left: 53%;
+        width: 70%;
+        height: auto;
+      }
+
+      .text {
+        max-width: 400px;
+      }
+    }
+  }
+}
+
+@include portrait {
+  @include mediaSm {
+    .promo-slide {
+      .flag-girl {
+        right: 15px;
+        left: 15px;
+      }
+
+      .text {
+        max-width: 500px;
+      }
+    }
+  }
+}
+
+@include mediaTsMax {
+  .promo-slide {
+    .flag-girl {
+      right: 15px;
+      left: 15px;
+      width: auto;
+      height: 50%;
+
+      &:before {
+        background-position: center bottom;
+        transform: none;
+      }
+    }
+
+    .slide-content-flex {
+      margin-bottom: 80%;
+      min-height: 50%;
+      padding: 90px 0 0;
+    }
+
+    .text {
+      margin: 0 auto;
+      max-width: 450px;
+      text-align: center;
+
+      h1 {
+        margin: 0 0 15px;
+        font-size: 26px;
+        line-height: 1.15;
+      }
+
+      ul {
+        font-size: 16px;
+        text-align: left;
+
+        li {
+          margin: 0 0 4px;
+        }
+      }
+    }
+
+    .share-container {
+      bottom: 34px;
+
+      &:hover .share-menu-container,
+      .toggle-share-btn.open-menu + .share-menu-container {
+        height: 250px;
+      }
+
+      .share-menu-container {
+        .ya-share2__list {
+          padding: 10px 0;
+        }
+
+        .ya-share2__item + .ya-share2__item {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+}
+
+@include mediaXs {
+  .promo-slide {
+    .slide-content-flex {
+      margin-bottom: 92%;
+    }
+
+    .text {
+      max-width: 290px;
+      text-align: center;
+
+      h1 {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@keyframes disablePointer {
+  0% {
+    pointer-events: none;
+  }
+
+  99% {
+    pointer-events: none;
+  }
+
+  100% {
+    pointer-events: auto;
+  }
+}
+
+@keyframes bound {
+  0% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -30px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}

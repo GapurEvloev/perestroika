@@ -1,0 +1,508 @@
+.prizes-slide {
+  position: relative;
+  overflow: hidden;
+  background-color: $white;
+
+  .right-gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: 193px;
+    background: linear-gradient(to right, $green 0%, $green 30%, #d7e4a9 50%, #e9f0c1 75%, #f6f8d2 100%);
+
+    .triangle {
+      position: absolute;
+      top: 0;
+      right: 100%;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+
+      &:before {
+        position: absolute;
+        right: 0;
+        display: block;
+        width: 0;
+        height: 0;
+        content: '';
+        border-top: 2145px solid transparent;
+        border-right: 240px solid $green;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      bottom: 0;
+      height: 90%;
+      max-width: 600px;
+      content: '';
+      background-image: url(../assets/prizes.png);
+      background-position: bottom center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translateX(50%);
+    }
+  }
+
+  .gradient-title {
+    position: absolute;
+    top: 90%;
+    right: 30px;
+    font-family: $headingFontFamilyBold;
+    font-size: 92px;
+    line-height: 95px;
+    letter-spacing: 0.065em;
+    text-align: right;
+    text-transform: uppercase;
+    color: $white;
+    transform: translateY(-100%);
+  }
+
+  .slide-content-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 130px 0 40px;
+    padding-right: 50%;
+  }
+
+  .text {
+    position: relative;
+    margin-left: 25px;
+    width: 420px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.prizes-slide .text {
+  h2 {
+    font-family: $baseFontFamily;
+    line-height: 1;
+    font-weight: 900;
+  }
+
+  h3 {
+    font-family: $headingFontFamilyLight;
+    line-height: 1;
+    color: #58623f;
+  }
+
+  & > h3 {
+    position: relative;
+    z-index: 1;
+    padding: 0 0 8px;
+    font-size: 65px;
+    color: $greenDark;
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      content: '';
+      border-style: solid;
+    }
+
+    &:before {
+      margin: 0 0 0 -11px;
+      border-width: 11px 11px 0 11px;
+      border-color: #e1e6d5 transparent transparent transparent;
+    }
+
+    &:after {
+      margin: -1px 0 0 -10px;
+      border-width: 10px 10px 0 10px;
+      border-style: solid;
+      border-color: $white transparent transparent transparent;
+    }
+
+  }
+
+  .default-block {
+    h3 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 27px;
+      font-weight: 300;
+      text-transform: none;
+    }
+
+    span {
+      font-size: 12px;
+      line-height: 1.33333;
+    }
+  }
+
+  & > h3,
+  .main-prizes,
+  .other-prizes {
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: #e1e6d5;
+  }
+
+  .opne-hover-block-btn {
+    margin: 10px 0 0;
+    display: inline-block;
+    padding: 0;
+    font-size: 16px;
+    border-width: 0 0 1px;
+    border-style: dashed;
+  }
+}
+
+.prizes-slide .main-prizes {
+  padding: 30px 0 23px;
+  color: #58623f;
+
+  h2 {
+    margin: 0 0 18px;
+    font-size: 72px;
+    letter-spacing: -0.043em;
+  }
+
+  .nomination {
+    display: inline-block;
+    width: 120px;
+    max-width: 33.33333%;
+    padding: 2px 0;
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-color: transparent;
+
+    & + .nomination {
+      border-color: rgba(#58623f, 0.3);
+    }
+  }
+}
+
+.prizes-slide .other-prizes {
+  margin: 0 0 14px;
+  padding: 18px 0 12px;
+  color: #b3bf94;
+
+  h2 {
+    margin: 0 0 2px;
+    font-size: 64px;
+    letter-spacing: -0.01em;
+  }
+}
+
+.prizes-slide .hover-block {
+  position: absolute;
+  top: 73px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px 35px 16px;
+  color: $white;
+  background: linear-gradient(to bottom, #58623f 0%, #8e957d 100%);
+
+  h5 {
+    margin: 0 0 21px;
+    font-family: $baseFontFamily;
+    font-size: 18px;
+    line-height: 1.33;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .nominations {
+    margin: 0 auto 12px;
+    width: 100%;
+    max-width: 282px;
+    padding: 20px 0 16px;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: rgba($white, 0.2);
+  }
+
+  .nomination {
+    margin: 0;
+
+    h4 {
+      margin: 0 0 7px;
+      font-family: $baseFontFamily;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    p {
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: none;
+    }
+
+    & + .nomination {
+      margin-top: 18px;
+    }
+  }
+
+  & > p {
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+
+@include landscape {
+  .prizes-slide {
+    .right-gradient {
+      &:after {
+        right: 45vw;
+        width: 50vw;
+      }
+    }
+  }
+}
+
+@include portrait {
+  .prizes-slide {
+    .right-gradient {
+      &:after {
+        right: 50vw;
+        width: 40vw;
+      }
+    }
+  }
+}
+
+@include mediaMd {
+  .prizes-slide {
+    .right-gradient {
+      &:after {
+        right: 47vw;
+        width: 50vw;
+        max-width: 320px;
+      }
+    }
+
+    .text {
+      margin-left: 0;
+      width: 360px;
+    }
+
+    .hover-block {
+      h5 {
+        margin-right: -10px;
+        margin-left: -10px;
+        font-size: 16px;
+      }
+
+      & > p {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@include mediaSm {
+  .prizes-slide {
+    .right-gradient {
+      margin-left: 80px;
+
+      &:after {
+        top: 320px;
+        right: 30px;
+        left: -60px;
+        width: auto;
+        height: auto;
+        transform: none;
+      }
+    }
+
+    .gradient-title {
+      top: 150px;
+      font-size: 54px;
+      line-height: 1.1;
+      transform: none;
+    }
+
+    .text {
+      margin-left: 0;
+      width: 340px;
+    }
+  }
+}
+
+@include mediaSmMax {
+  .prizes-slide {
+    .text {
+      & > h3 {
+        font-size: 50px;
+      }
+
+      .default-block {
+        h3 {
+          font-size: 36px;
+        }
+
+        p {
+          font-size: 22px;
+        }
+      }
+    }
+
+    .main-prizes {
+      padding: 24px 0 20px;
+
+      h2 {
+        font-size: 60px;
+      }
+    }
+
+    .other-prizes {
+      padding: 14px 0 10px;
+
+      h2 {
+        font-size: 54px;
+      }
+    }
+
+    .hover-block {
+      top: 59px;
+
+      h5 {
+        margin: 0 -15px 12px;
+        font-size: 15px;
+      }
+
+      .nominations {
+        padding: 13px 0 12px;
+      }
+
+      .nomination {
+        margin: 0 -10px;
+
+        h4 {
+          margin: 0 0 5px;
+          font-size: 16px;
+        }
+
+        & + .nomination {
+          margin-top: 15px;
+        }
+      }
+
+      & > p {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@include mediaTsMax {
+  .prizes-slide {
+    .slide-content-flex {
+      padding: 350px 0 30px;
+    }
+
+    .right-gradient {
+      bottom: auto;
+      left: 0;
+      margin: 0;
+      height: 325px;
+
+      .triangle {
+        display: none;
+      }
+
+      &:after {
+        top: 130px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        min-width: 0;
+        max-width: none;
+        transform: none;
+      }
+    }
+
+    .gradient-title {
+      top: 90px;
+      right: 0;
+      bottom: auto;
+      left: 0;
+      font-size: 36px;
+      line-height: 1;
+      text-align: center;
+      transform: none;
+
+      br {
+        display: none;
+      }
+    }
+
+    .text {
+      margin: 0 auto;
+    }
+  }
+}
+
+@include mediaXs {
+  .prizes-slide {
+    .text {
+      width: 100%;
+      max-width: none;
+
+      & > h3 {
+        font-size: 32px;
+      }
+
+      .default-block {
+        h3 {
+          font-size: 28px;
+        }
+
+        p {
+          font-size: 18px;
+        }
+      }
+
+      .opne-hover-block-btn {
+        font-size: 14px;
+      }
+    }
+
+    .main-prizes {
+      h2 {
+        font-size: 52px;
+        line-height: 1.1;
+      }
+    }
+
+    .other-prizes {
+      h2 {
+        font-size: 46px;
+      }
+    }
+
+    .hover-block {
+      top: 41px;
+      padding: 18px 15px 12px;
+
+      h5 {
+        margin: 0 -10px 10px;
+        font-size: 14px;
+      }
+
+      .nominations {
+        padding: 10px 0;
+      }
+    }
+  }
+}

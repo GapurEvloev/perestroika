@@ -1,0 +1,133 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,900);
+
+@font-face {
+  font-family: 'RodchenkoCondBold';
+  src: url('../assets/fonts/rodchenkoCond.eot?#iefix') format('embedded-opentype'),
+       url('../assets/fonts/rodchenkoCond.woff') format('woff'),
+       url('../assets/fonts/rodchenkoCond.ttf')  format('truetype'),
+       url('../assets/fonts/rodchenkoCond.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  font-family: 'Pobeda';
+  src: url('../assets/fonts/pobeda-bold.eot?#iefix') format('embedded-opentype'),
+       url('../assets/fonts/pobeda-bold.woff') format('woff'),
+       url('../assets/fonts/pobeda-bold.ttf')  format('truetype'),
+       url('../assets/fonts/pobeda-bold.svg#svgFontName') format('svg');
+}
+
+$baseFontFamily: 'Roboto', sans-serif;
+$baseFontSize: 16px;
+
+$headingFontFamilyBold: 'RodchenkoCondBold', sans-serif;
+$headingFontFamilyLight: 'Pobeda', sans-serif;
+
+$white: #fff;
+$whiteAlt: #fefefe;
+$black: #000;
+$gray: #5b5b5b;
+$grayLight: #858585;
+$grayLighter: #bfbfbf;
+$grayDark: #292929;
+$red: #f44f4f;
+$redAlt: #e74b54;
+$yellow: #eed45e;
+$blue: #6197a8;
+$lightBlue: #7cbfd4;
+$green: #c7da92;
+$greenDark: #9dad73;
+
+$redGradient: linear-gradient(to right, $red 0%, #f78077 50%, #fddec5 100%);
+
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin portrait {
+  @media (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media (min-width: 1340px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media (min-width: 1020px) and (max-width: 1339px) {
+    @content;
+  }
+}
+
+@mixin mediaMdMin {
+  @media (min-width: 1020px) {
+    @content;
+  }
+}
+
+@mixin mediaMdMax {
+  @media (max-width: 1339px) {
+    @content;
+  }
+}
+
+@mixin mediaSm {
+  @media (min-width: 768px) and (max-width: 1019px) {
+    @content;
+  }
+}
+
+@mixin mediaSmMin {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaSmMax {
+  @media (max-width: 1019px) {
+    @content;
+  }
+}
+
+@mixin mediaTs {
+  @media (min-width: 500px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mediaTsMin {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaTsMax {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mediaXs {
+  @media (max-width: 499px) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    clear: both;
+    display: table;
+    content: '';
+  }
+}
+
+@mixin redTextGradient {
+  color: $red;
+  background: -webkit-linear-gradient(left, $redAlt 0%, $redAlt 50%, #f09196 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

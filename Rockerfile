@@ -1,0 +1,31 @@
+FROM node:8.2
+
+ADD . /app
+WORKDIR /app
+
+RUN npm install -g yarn && yarn install
+
+ENV NODE_ENV production
+
+RUN npm run build
+
+EXPORT ./build/ /build/
+
+
+FROM nginx:1.13-alpine
+
+RUN apk --no-cache add python py-pip nginx && pip install j2cli && mkdir /run/nginx
+
+IMPORT /build/ /usr/share/nginx/html/
+WORKDIR /usr/share/nginx/html/
+
+COPY nginx.conf.j2 /etc/nginx/nginx.conf.j2
+COPY config.js.j2 /config.js.j2
+
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+
+EXPOSE 80
+CMD ["/docker-entrypoint.sh"]
+
+TAG tele2contests-landingpage

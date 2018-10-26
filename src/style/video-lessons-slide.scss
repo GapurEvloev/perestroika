@@ -1,0 +1,153 @@
+.video-lessons-slide {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: $grayLight;
+  background-color: $white;
+
+  .slide-content-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 130px 0 15px;
+  }
+
+  h2 {
+    @include redTextGradient;
+
+    margin: 0 0 2%;
+    font-family: $headingFontFamilyBold;
+    font-size: 62px;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .col {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .vertical-align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.video-lessons-slide .tv-block {
+  width: 100%;
+  max-width: 615px;
+  padding-right: 65px;
+  text-align: right;
+}
+
+.video-lessons-slide .text-block {
+  width: 100%;
+  max-width: 368px;
+  text-align: left;
+
+  h3 {
+    margin: 0 0 8px;
+    padding: 0 0 10px;
+    font-family: $headingFontFamilyLight;
+    font-size: 40px;
+    line-height: 1;
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: $grayLighter;
+  }
+
+  p {
+    font-size: 22px;
+    line-height: 29px;
+    font-weight: 500;
+  }
+}
+
+@include mediaMd {
+  .video-lessons-slide {
+    h2 {
+      font-size: 50px;
+    }
+  }
+}
+
+@include mediaSmMax {
+  .video-lessons-slide {
+    h2 {
+      margin-bottom: 5%;
+      font-size: 40px;
+      letter-spacing: 0;
+    }
+
+    .vertical-align-center {
+      flex-direction: column;
+    }
+
+    .tv-block {
+      margin: 0 0 5%;
+      flex: 1;
+      width: 360px;
+      max-width: 100%;
+      padding: 0;
+      text-align: center;
+    }
+
+    .text-block {
+      flex: 1;
+      width: 500px;
+      max-width: 100%;
+      text-align: center;
+
+      h3 {
+        font-size: 36px;
+      }
+    }
+  }
+}
+
+@include mediaTsMax {
+  .video-lessons-slide {
+    .slide-content-flex {
+      padding: 90px 0 30px;
+    }
+
+    h2 {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 500px;
+      font-size: 36px;
+    }
+
+    .tv-block {
+      width: 300px;
+    }
+  }
+}
+
+@include mediaXs {
+  .video-lessons-slide {
+    h2 {
+      font-size: 28px;
+    }
+
+    .text-block {
+      h3 {
+        font-size: 34px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.4;
+      }
+    }
+
+    .tv-block {
+      width: 100%;
+      max-width: none;
+    }
+  }
+}

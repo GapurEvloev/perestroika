@@ -1,0 +1,17 @@
+window.__config = {
+  {% if APP_DOMAIN is defined %}appDomain: '{{ APP_DOMAIN }}',{% endif %}
+  {% if APP_PROTOCOL is defined %}appProtocol: '{{ APP_PROTOCOL }}',{% endif %}
+  {% if APP_REGISTARTION_PATH is defined %} appRegistartionPath: '{{ APP_REGISTARTION_PATH }}',{% endif %}
+  {% if APP_SEASON_PATH is defined %} appSeasonsPath: '{{ APP_SEASON_PATH }}',{% endif %}
+  {% if APP_RULES_PATH is defined %} appRulesPath: '{{ APP_RULES_PATH }}',{% endif %}
+  {% if APP_OFERTA_PATH is defined %} appOfertaPath: '{{ APP_OFERTA_PATH }}',{% endif %}
+  {% if APP_FAQ_PATH is defined %} appFaqPath: '{{ APP_FAQ_PATH }}',{% endif %}
+  {% if SUBSCRIBE_ENDPOINT is defined %} subscribeEndpoint: '{{ SUBSCRIBE_ENDPOINT }}', {% endif %}
+  {% if SUBSCRIBE_SUCCESS_MSG is defined %} subscribeSuccessMsg: '{{ SUBSCRIBE_SUCCESS_MSG }}', {% endif %}
+  {% if SEASON_ID is defined %} seasonId: '{{ SEASON_ID }}',{% endif %}
+  {% if ABOUT_VIDEO_ID is defined %} aboutVideoId: '{{ ABOUT_VIDEO_ID }}',{% endif %}
+  {% if VIDEO_LESSONS_VIDEO_ID is defined %} videoLessonsVideoId: '{{ VIDEO_LESSONS_VIDEO_ID }}',{% endif %}
+  {% if DISCOUNT_COOKIE_HOURS is defined %} discountCookieHours: {{ DISCOUNT_COOKIE_HOURS }},{% endif %}
+  {% if SEASON_PRICE is defined %} seasonPrice: {{ SEASON_PRICE }},{% endif %}
+  {% if SEASON_DISCOUNT_PRICE is defined %} seasonDiscountPrice: {{ SEASON_DISCOUNT_PRICE }},{% endif %}
+}

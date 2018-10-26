@@ -1,0 +1,212 @@
+.header {
+  @include clearfix;
+
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  left: 30px;
+  z-index: 10;
+
+  .logo {
+    float: left;
+    display: inline-block;
+    width: 301px;
+    height: 49px;
+    max-width: 100%;
+    opacity: 0.7;
+    background-image: url(../assets/logo.png);
+    background-position: center left;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .nav-list {
+    margin: 0;
+    margin-right: -16px;
+    float: right;
+    padding: 6px 0 0;
+    list-style: none;
+  }
+
+  .nav-list-item {
+    display: inline-block;
+  }
+
+  .nav-link {
+    display: inline-block;
+    height: 35px;
+    padding: 0 16px;
+    font-family: $headingFontFamilyLight;
+    font-size: 21px;
+    line-height: 36px;
+    text-transform: uppercase;
+    color: #808686;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    transition: color 0.15s ease, border-color 0.3s ease 0.3s;
+
+    &:hover,
+    &:active {
+      color: #111;
+    }
+
+    &.active {
+      border-color: $red;
+    }
+  }
+
+  .toggle-mobile-nav-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 101;
+    display: none;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    opacity: 0.7;
+
+    &:before {
+      position: absolute;
+      top: 16px;
+      right: 12px;
+      left: 12px;
+      height: 10px;
+      content: '';
+      border-width: 2px 0;
+      border-style: solid;
+      border-color: $black;
+    }
+
+    &:after {
+      position: absolute;
+      top: 24px;
+      right: 12px;
+      left: 12px;
+      height: 10px;
+      content: '';
+      border-width: 0 0 2px;
+      border-style: solid;
+      border-color: $black;
+    }
+  }
+}
+
+@include mediaSm {
+  .header {
+    .nav-list {
+      margin-right: -8px;
+    }
+
+    .nav-link {
+      padding: 0 8px;
+      font-size: 20px;
+    }
+  }
+}
+
+@include mediaSmMax {
+  .header {
+    right: 15px;
+    left: 15px;
+
+    .logo {
+      width: 230px;
+    }
+  }
+}
+
+@include mediaTsMax {
+  .header {
+    top: 25px;
+    z-index: auto;
+
+    .toggle-mobile-nav-btn {
+      display: block;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 100;
+      width: 210px;
+      height: 100%;
+      overflow: hidden;
+      background-color: $white;
+      box-shadow: 0 0 20px 0 rgba($black, 0.2);
+      transition: transform 0.3s ease-in;
+      transform: translateX(230px);
+
+      &.mobile-open {
+        transition: transform 0.2s ease;
+        transform: translateX(0);
+
+        .nav-link {
+          padding-left: 20px;
+          transition: padding-left 0.25s ease-in-out;
+        }
+
+        .nav-list-item:nth-child(1) .nav-link { transition-delay: 0.1s; }
+        .nav-list-item:nth-child(2) .nav-link { transition-delay: 0.15s; }
+        .nav-list-item:nth-child(3) .nav-link { transition-delay: 0.2s; }
+        .nav-list-item:nth-child(4) .nav-link { transition-delay: 0.25s; }
+        .nav-list-item:nth-child(5) .nav-link { transition-delay: 0.3s; }
+        .nav-list-item:nth-child(6) .nav-link { transition-delay: 0.35s; }
+        .nav-list-item:nth-child(7) .nav-link { transition-delay: 0.4s; }
+
+        & + .toggle-mobile-nav-btn {
+          position: fixed;
+          top: 25px;
+          right: 15px;
+        }
+      }
+    }
+
+    .nav-list {
+      margin: 80px 0 0;
+      width: 100%;
+      padding: 0;
+    }
+
+    .nav-list-item {
+      display: block;
+      text-align: left;
+
+      & + .nav-list-item {
+        margin-top: 18px;
+      }
+    }
+
+    .nav-link {
+      width: 100%;
+      height: auto;
+      padding: 0 20px;
+      padding-left: 200px;
+      line-height: 26px;
+      text-align: left;
+      white-space: nowrap;
+      border-width: 0 0 2px;
+      border-radius: 0;
+      transition: padding-left 0s ease 0.2s;
+    }
+  }
+}
+
+@include mediaXs {
+  .header {
+    top: 20px;
+
+    .logo {
+      margin: 0 auto;
+      float: none;
+      display: block;
+      width: 135px;
+      background-size: auto 34px;
+    }
+
+    .nav.mobile-open + .toggle-mobile-nav-btn {
+      top: 20px;
+    }
+  }
+}

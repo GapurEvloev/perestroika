@@ -1,0 +1,340 @@
+.mobile-slide {
+  position: relative;
+  overflow: hidden;
+  color: $white;
+  background: $redGradient;
+
+  .slide-content-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 120px 0 164px;
+  }
+
+  .footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  .center {
+    position: relative;
+    z-index: 1;
+  }
+
+  .text {
+    width: 100%;
+    max-width: 780px;
+  }
+}
+
+.mobile-slide .text {
+  h2 {
+    margin: 0 0 45px;
+    max-width: 400px;
+    font-family: $headingFontFamilyBold;
+    font-size: 60px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0 0 20px;
+    max-width: 550px;
+    padding: 0 0 0 5px;
+    font-weight: 400;
+  }
+
+  .soon {
+    margin: 20px 0 0;
+    font-family: $headingFontFamilyLight;
+    letter-spacing: 0.1em;
+    color: darken($grayDark, 5%);
+  }
+}
+
+.mobile-slide .advantages-list {
+  margin: 0 0 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+
+  li {
+    position: relative;
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0 0 0 70px;
+    font-family: $headingFontFamilyLight;
+    font-size: 32px;
+    line-height: 1;
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -31px;
+      width: 62px;
+      height: 62px;
+      content: "";
+      background-image: url(../assets/mobile-icons.png);
+      background-size: auto 62px;
+    }
+
+    &.control {
+      flex-basis: 270px;
+
+      &:before {
+        background-position: 0 0;
+      }
+    }
+
+    &.interface {
+      flex-basis: 230px;
+
+      &:before {
+        background-position: 50% 0;
+      }
+    }
+
+    &.notifications {
+      flex-basis: 300px;
+
+      &:before {
+        background-position: 100% 0;
+      }
+    }
+  }
+}
+
+.mobile-slide .apps-links {
+  a {
+    display: inline-block;
+    width: 154px;
+    height: 46px;
+    font-size: 0;
+    text-decoration: none;
+    text-indent: -9999px;
+    background-size: 154px auto;
+    background-repeat: no-repeat;
+
+    &.google-play-link {
+      margin: 0 15px 0 0;
+      background-image: url(../assets/google-play.png);
+    }
+
+    &.app-store-link {
+      background-image: url(../assets/app-store.png);
+    }
+  }
+}
+
+.mobile-slide .phones-preview {
+  position: absolute;
+  right: 40px;
+  bottom: -70px;
+  width: 29.453125%;
+
+  .phone1 {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    display: inline-block;
+    width: 60.742706%;
+    background-image: url(../assets/phone1.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &:before {
+      display: block;
+      padding-top: 200.88%;
+      content: '';
+    }
+  }
+
+  .phone2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: inline-block;
+    width: 52.785146%;
+    background-image: url(../assets/phone2.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &:before {
+      display: block;
+      padding-top: 216.085%;
+      content: '';
+    }
+  }
+}
+
+@include mediaMdMax {
+  .mobile-slide {
+    .text {
+      max-width: 600px;
+
+      h2 {
+        margin: 0 0 35px;
+        font-size: 54px;
+      }
+    }
+
+    .advantages-list {
+      li {
+        padding: 0 0 0 55px;
+        font-size: 25px;
+        line-height: 0.9;
+
+        &:before {
+          margin-top: -25px;
+          width: 50px;
+          height: 50px;
+          background-size: auto 50px;
+        }
+
+        &.interface {
+          flex-basis: 160px;
+        }
+
+        &.notifications {
+          flex-basis: 250px;
+        }
+
+        &.control {
+          flex-basis: 200px;
+        }
+      }
+    }
+  }
+}
+
+@include mediaSmMax {
+  .mobile-slide {
+    .text {
+      max-width: 470px;
+
+      h2 {
+        margin: 0 0 20px;
+        max-width: 260px;
+        font-size: 40px;
+      }
+    }
+
+    .advantages-list {
+      margin: 0 0 20px;
+      display: block;
+
+      li {
+        display: flex;
+        align-items: center;
+        min-height: 50px;
+
+        & + li {
+          margin-top: 10px;
+        }
+
+        &.interface:before {
+          margin-top: -28px;
+        }
+
+        &.notifications:before {
+          margin-top: -30px;
+        }
+
+        &.control:before {
+          margin-top: -26px;
+        }
+      }
+    }
+
+    .phones-preview {
+      right: 0;
+      bottom: 50%;
+      width: 35%;
+
+      .phone1,
+      .phone2 {
+        transform: translateY(50%);
+      }
+    }
+  }
+}
+
+@include mediaTsMax {
+  .mobile-slide {
+    .slide-content-flex {
+      padding-top: 90px;
+    }
+
+    .text {
+      max-width: none;
+
+      h2 {
+        max-width: none;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .apps-links {
+      margin: 40px 0 20px;
+      width: 154px;
+
+      a.google-play-link {
+        margin: 0;
+      }
+    }
+
+    .phones-preview {
+      display: none;
+      /*
+      right: auto;
+      bottom: -50px;
+      left: 200px;
+      width: 170px;
+
+      .phone1,
+      .phone2 {
+        transform: none;
+      }
+      */
+    }
+  }
+}
+
+@include mediaXs {
+  .mobile-slide {
+    .text {
+      text-align: center;
+
+      h2 {
+        font-size: 28px;
+      }
+    }
+
+    .advantages-list {
+      display: inline-block;
+      max-width: 300px;
+      text-align: left;
+    }
+
+    .apps-links {
+      margin: 20px 0 0;
+      display: inline-block;
+    }
+
+    .phones-preview {
+      display: none;
+    }
+  }
+}
